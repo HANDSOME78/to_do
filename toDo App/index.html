@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo App</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-color: black;
+			color: gold
+		}
+		.d-flex{
+			display: flex;
+			justify-content: center;
+			background-color: silver;
+			color:#000;
+			padding: 30px;
+			width: 50%;
+			margin-left: 25%;
+			margin-right: 25%;
+			border: 2px solid gold;
+			border-radius: 10px 100px;
+		}
+		button{
+			background-color: #000;
+			color: gold;
+			padding: 10px 30px;
+			border: 1px solid gold;
+			cursor: pointer;
+			font-weight: 900;
+			border-radius: 10px 100px;
+			transition: .5s all;
+			font-size: 20px;
+		}
+		button:hover{
+			border-radius: 10px 10px;
+			transition: .5s all;
+		}
+		ol li{
+			list-style-type: 1;
+			font-weight: 900;
+			margin-bottom: 20px;
+			font-size: 20px;
+		}
+		ol li:hover{
+			background-color: #000;
+			padding-left: 20px;
+			padding-right: 20px;
+			color: gold;
+			border-radius: 10px 100px;
+		}
+		ol li span{
+			color: red;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1 align="center">Personal Daily ToDO App</h1>
+	<div class="d-flex">
+		<div>
+			<div>
+				<button onclick="addTodo()">Add New Item</button>
+			</div>
+
+			<h1>My ToDo's</h1>
+			<div id="items" style="font-size: 20px;font-weight: 900">
+			</div>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+		let allTodos = ["hello","hi","action"];
+		function addTodo() {
+			let item = prompt("Enter an Item ToDo","");
+			while (item == "") {
+				item = prompt("Enter an Item ToDo","");
+			}
+			allTodos.push(item);
+			
+		}
+		document.getElementById('items').innerHTML = allTodos.join("<hr>");
+		// for(var i = 0; i = allTodos.length;  i++){
+		// 	console.log(allTodos[i])
+		// }
+	</script>
+</body>
+</html>
